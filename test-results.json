@@ -1,0 +1,396 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\katri\\academybugs-playwright-tests\\playwright.config.js",
+    "rootDir": "C:/Users/katri/academybugs-playwright-tests/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/katri/academybugs-playwright-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/katri/academybugs-playwright-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ui\\academybugs-simple.spec.js",
+      "file": "ui/academybugs-simple.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "AcademyBugs - Simple Working Tests",
+          "file": "ui/academybugs-simple.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Test 1: Page loads successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7812,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🌐 Тест 1: Проверка загрузки страницы\n"
+                        },
+                        {
+                          "text": "✅ Страница загружена: Find Bugs – AcademyBugs.com\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-14T16:57:21.225Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-5d813-t-1-Page-loads-successfully-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-5d813-t-1-Page-loads-successfully-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-5d813-t-1-Page-loads-successfully-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "23e3107a95271682c0b3-c6b1125c24da73165e45",
+              "file": "ui/academybugs-simple.spec.js",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "Test 2: Find clickable elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7290,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🔍 Тест 2: Поиск кликабельных элементов\n"
+                        },
+                        {
+                          "text": "Найдено кнопок: 6\n"
+                        },
+                        {
+                          "text": "Найдено ссылок: 174\n"
+                        },
+                        {
+                          "text": "Найдено полей ввода: 0\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-14T16:57:30.097Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-372bf-t-2-Find-clickable-elements-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-372bf-t-2-Find-clickable-elements-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-372bf-t-2-Find-clickable-elements-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "23e3107a95271682c0b3-3f75b62d059a45335539",
+              "file": "ui/academybugs-simple.spec.js",
+              "line": 27,
+              "column": 9
+            },
+            {
+              "title": "Test 3: Try to interact with forms",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7158,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "📝 Тест 3: Взаимодействие с формами\n"
+                        },
+                        {
+                          "text": "ℹ️ Поля ввода не найдены\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-14T16:57:37.685Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-b8126--Try-to-interact-with-forms-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-b8126--Try-to-interact-with-forms-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-b8126--Try-to-interact-with-forms-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "23e3107a95271682c0b3-66b90158e01409a8c2c5",
+              "file": "ui/academybugs-simple.spec.js",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "Test 4: Check for JavaScript errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10192,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🐛 Тест 4: Проверка JavaScript ошибок\n"
+                        },
+                        {
+                          "text": "Найдено JS ошибок: 1\n"
+                        },
+                        {
+                          "text": "🐛 JavaScript ошибки найдены:\n"
+                        },
+                        {
+                          "text": "1. Failed to load resource: net::ERR_NAME_NOT_RESOLVED\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-14T16:57:45.063Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-e444d-Check-for-JavaScript-errors-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-e444d-Check-for-JavaScript-errors-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-e444d-Check-for-JavaScript-errors-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "23e3107a95271682c0b3-dfbbfd7e9391a1d48822",
+              "file": "ui/academybugs-simple.spec.js",
+              "line": 82,
+              "column": 9
+            },
+            {
+              "title": "Test 5: Test navigation and links",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11351,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🔗 Тест 5: Проверка навигации\n"
+                        },
+                        {
+                          "text": "Найдено внутренних ссылок: 126\n"
+                        },
+                        {
+                          "text": "Кликаем на ссылку: https://academybugs.com/cookie-policy-eu/\n"
+                        },
+                        {
+                          "text": "Текущий URL: https://academybugs.com/cookie-policy-eu/\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-14T16:57:55.529Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-87bd2-5-Test-navigation-and-links-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-87bd2-5-Test-navigation-and-links-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\katri\\academybugs-playwright-tests\\test-results\\ui-academybugs-simple-Acad-87bd2-5-Test-navigation-and-links-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "23e3107a95271682c0b3-2c2fd569dd33925f7a8c",
+              "file": "ui/academybugs-simple.spec.js",
+              "line": 112,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-07-14T16:57:20.437Z",
+    "duration": 48049.234000000004,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

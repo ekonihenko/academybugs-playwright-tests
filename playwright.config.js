@@ -6,18 +6,14 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
+
   reporter: [
     ['html'],
-    [
-      'allure-playwright',
-      {
-        detail: true,
-        outputFolder: 'allure-results',
-        suiteTitle: false,
-      },
-    ],
-    ['list'],
+    ['json', { outputFile: 'test-results/results.json' }],
+    ['junit', { outputFile: 'test-results/results.xml' }],
+    ['allure-playwright'],
   ],
+
   use: {
     baseURL: 'https://academybugs.com',
     trace: 'on-first-retry',
@@ -25,6 +21,7 @@ export default defineConfig({
     video: 'retain-on-failure',
     headless: true,
   },
+
   projects: [
     {
       name: 'chromium',
@@ -34,14 +31,10 @@ export default defineConfig({
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
   ],
-  webServer: {
-    command: 'npm run start',
-    url: 'http://127.0.0.1:3000',
-    reuseExistingServer: !process.env.CI,
+
+  timeout: 30000,
+  expect: {
+    timeout: 5000,
   },
 });

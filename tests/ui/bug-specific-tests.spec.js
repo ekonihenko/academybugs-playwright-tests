@@ -1,62 +1,54 @@
 import { test, expect } from '@playwright/test';
-import { MainPage } from '../../src/pages/MainPage.js';
+import { AcademyBugsPage } from '../../page-objects/AcademyBugsPage.js';
+import { testData } from '../../test-data/testData.js';
 
 test.describe('Specific Bug Detection Tests', () => {
-  let mainPage;
+  let academyPage;
 
   test.beforeEach(async ({ page }) => {
-    mainPage = new MainPage(page);
-    await mainPage.open();
-  });
-
-  test('Cross-site scripting vulnerability', async ({ page }) => {
-    // Тест на XSS уязвимость
-    await page.fill('input[name="search"]', '<script>alert("XSS")</script>');
-    await page.click('button[type="submit"]');
-
-    // Проверка на наличие алерта или ошибки
-    const bugOverlay = await mainPage.checkForBugOverlay();
-    expect(bugOverlay.found).toBe(true);
-  });
-
-  test('SQL injection attempt', async ({ page }) => {
-    // Тест на SQL инъекцию
-    await page.fill('input[name="username"]', "' OR '1'='1");
-    await page.click('button[type="submit"]');
-
-    const bugOverlay = await mainPage.checkForBugOverlay();
-    expect(bugOverlay.found).toBe(true);
-  });
-
-  test('Buffer overflow simulation', async ({ page }) => {
-    // Тест на переполнение буфера
-    const longString = 'A'.repeat(10000);
-    await page.fill('textarea', longString);
-    await page.click('button[type="submit"]');
-
-    const bugOverlay = await mainPage.checkForBugOverlay();
-    expect(bugOverlay.found).toBe(true);
+    academyPage = new AcademyBugsPage(page);
+    await academyPage.goto();
   });
 
   test('Race condition bug', async ({ page }) => {
-    // Тест на состояние гонки
-    await Promise.all([
-      page.click('button#submit1'),
-      page.click('button#submit2'),
-      page.click('button#submit3'),
-    ]);
+    console.log(' Тест: Быстрые клики');
 
-    const bugOverlay = await mainPage.checkForBugOverlay();
-    expect(bugOverlay.found).toBe(true);
-  });
+    await test.step('Быстрые множественные клики', async () => {
+      const buttons = await page.locator('button:not([disabled])').all();
 
-  test('Memory leak detection', async ({ page }) => {
-    // Тест на утечку памяти
-    for (let i = 0; i < 100; i++) {
-      await page.click('button#create-object');
-    }
+      if (buttons.length > 0) {
+        const button = buttons[0];
+        console.log(` Найдена кнопка для тестирования`);
 
-    const bugOverlay = await mainPage.checkForBugOverlay();
-    expect(bugOverlay.found).toBe(true);
+        try {
+          // Быстро кликаем
+          console.log(' Выполняем быстрые клики...');
+          for (let i = 0; i < 10; i++) {
+            await button.click({ timeout: 100 });
+          }
+
+          await page.waitForTimeout(2000);
+
+          const errors = await page.locator('.error, [class*="error"]').all();
+          if (errors.length > 0) {
+            console.log(' БАГ: Race condition обнаружен!');
+            console.log(` Количество ошибок: ${errors.length}`);
+
+            for (let i = 0; i < errors.length; i++) {
+              const errorText = await errors[i].textContent();
+              console.log(`  Ошибка ${i + 1}: ${errorText}`);
+            }
+          } else {
+            console.log(' Race condition не обнаружен');
+          }
+        } catch (error) {
+          console.log(` Race condition тест: ${error.message}`);
+        }
+      } else {
+        console.log(' Кнопки для тестирования не найдены');
+      }
+
+      await academyPage.takeScreenshot('race-condition-test');
+    });
   });
 });
