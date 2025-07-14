@@ -1,0 +1,27 @@
+{
+  "name": "academybugs-playwright-tests",
+  "version": "1.0.0",
+  "description": "UI test framework for AcademyBugs service",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "report": "playwright show-report",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results"
+  },
+  "keywords": ["playwright", "testing", "ui", "automation", "academybugs"],
+  "author": "Elena Konihenko",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "allure-playwright": "^2.10.0",
+    "allure-commandline": "^2.24.1"
+  }
+}

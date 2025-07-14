@@ -1,0 +1,28 @@
+base:
+  logo: https://avatars.githubusercontent.com/u/5879127?s=200&v=4
+  project: AcademyBugs Test Framework
+  environment: Production
+  comment: Automated UI tests for AcademyBugs service
+  reportLink: https://your-username.github.io/academybugs-playwright-tests
+  language: en
+  allureFolder: allure-report/
+  enableChart: true
+
+telegram:
+  token: ${TELEGRAM_TOKEN}
+  chat: ${TELEGRAM_CHAT_ID}
+  replyTo: ''
+
+slack:
+  token: ${SLACK_TOKEN}
+  channel: ${SLACK_CHANNEL}
+  replyTo: ''
+
+email:
+  host: smtp.gmail.com
+  port: 587
+  username: ${EMAIL_USERNAME}
+  password: ${EMAIL_PASSWORD}
+  enableSSL: false
+  from: ${EMAIL_FROM}
+  to: ${EMAIL_TO}
